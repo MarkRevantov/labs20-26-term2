@@ -1,0 +1,47 @@
+#!/bin/bash
+case "$1" in "?" )
+	echo "Version: 1.2 (05mar2020mon)"
+	echo "Programm: mag21"
+	echo "This programm delete all files with Input Suffix (for exp: txt), if there is files with same name but with other suffix"
+	echo "Exec by ./mag21 in terminal in local directory. "
+	echo "./mag21"
+	echo "[suffix of file]"
+	echo "Example: mag21"
+	echo "Input suffix of file"
+	echo "txt"
+	echo "mag21 has deleted N files!"
+	exit 0
+	;;
+esac
+
+echo "Input suffix of file"
+read INSUF
+
+rm -f ./.ls_mag21.tmp
+ls > ./.ls_mag21.tmp
+
+count_deleted=0
+
+while read file1_name
+do
+	suffix_file1=${file1_name##*.}
+	if [[ ($file_name1 != $suffix_file1) && ($INSUF = $suffix_file1) ]]
+	then
+	while read file2_name
+		do
+		suffix_file2=${file2_name##*.}
+
+		prefix_file1=${file1_name%\.$suffix_file1}
+		prefix_file2=${file2_name%\.$suffix_file2}
+		if [[($prefix_file2 == $prefix_file1) && ($suffix_file2 != $suffix_file1)]]
+		then	
+			let count_deleted=$count_deleted+1
+			rm -f ${file1_name}
+		fi		
+		done < ./.ls_mag21.tmp
+	fi
+done < ./.ls_mag21.tmp
+
+rm -f ./.ls_mag21.tmp
+
+echo "mag21 has delete $count_deleted files!"

@@ -1,0 +1,10 @@
+116	./labs/laba15_magorokhov.pdf
+128	./labs/laba20
+12	./labs/laba20/l20-2012.djvu
+12	./labs/laba20/unzip.tar
+12	./labs/laba23/l23-2012.djvu
+12	./labs/laba26/l26-2012.djvu
+16	./labs/laba21/l21-2012.djvu
+16	./labs/laba23
+16	./labs/laba24/l24-2012.djvu
+16	./labs/laba26
